@@ -1,0 +1,70 @@
+# Compiled source files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Package archives (better to unpack and commit raw source)
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Database files
+*.sql
+*.sqlite
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor and IDE files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+_ide_helper.php
+/.idea/
+/.vscode/
+/.nova
+
+# Eclipse project files
+/.buildpath
+/.project
+/.settings
+
+# Cache directories
+.cache
+
+# User-created temporary files
+*.bak
+*.orig
+
+# Composer dependencies
+/vendor
+
+# Node.js dependencies
+/node_modules
+
+# CraftCMS specific
+/.env
+/web/dist

@@ -1,0 +1,12 @@
+/**
+ * tailwind-config.css
+ *
+ * CSS-based configuration for Tailwind CSS
+ * ref: https://tailwindcss.com/docs/theme
+ */
+
+@source "../../templates/**/*.{html,twig,vue,jsx,tsx}";
+
+@theme {
+    --color-mint-500: oklch(0.72 0.11 178);
+}
