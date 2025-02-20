@@ -16,7 +16,7 @@
 # and load the full stylesheet(s) asychronously
 #}
 <script>
-     Cookie.set("critical-css", "{{ cssHash }}", { expires: "7D", secure: true });
+    Cookie.set("critical-css", "{{ cssHash }}", { expires: "7D", secure: true });
 </script>
 {{ craft.vite.includeCriticalCssTags() }}
 {{ craft.vite.script("src/js/app.js", true) }}
