@@ -1,4 +1,4 @@
-## About Project Name
+# About Project Name
 
 Project description...
 
