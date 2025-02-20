@@ -33,12 +33,12 @@ Craft CMS starter with DDEV for local development and Vite for front-end bundlin
 
 Bash
 ```bash
-bash <(curl -fsL https://raw.githubusercontent.com/estebancastro/craft-boilerplate/main/install.sh)
+bash <(curl -fsL https://raw.githubusercontent.com/estebancastro/craft-starter/main/install.sh)
 ```
 
 Fish
 ```bash
-bash (curl -fsL https://raw.githubusercontent.com/estebancastro/craft-boilerplate/main/install.sh | psub)
+bash (curl -fsL https://raw.githubusercontent.com/estebancastro/craft-starter/main/install.sh | psub)
 ```
 
 ## Makefile Commands
