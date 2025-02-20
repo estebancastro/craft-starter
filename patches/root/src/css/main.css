@@ -6,6 +6,11 @@
  */
 
 /**
+ * Include custom web fonts.
+ */
+@import "./components/webfonts.css";
+
+/**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
  */
@@ -18,7 +23,6 @@
  * override them.
  */
 /* @import "./components/global.css"; */
-/* @import "./components/webfonts.css"; */
 
 /**
  * Include styles for individual pages

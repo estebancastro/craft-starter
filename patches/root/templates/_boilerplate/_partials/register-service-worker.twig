@@ -13,7 +13,8 @@
     }
 </script>
 #}
-{# Unregister any lingering Service Workers #}
+
+{# -- Unregister any lingering Service Workers -- #}
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {

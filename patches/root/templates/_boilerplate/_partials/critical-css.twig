@@ -5,9 +5,9 @@
 #}
 {% set cssHash = craft.vite.getCssHash("src/js/app.js") %}
 {#
- # If the `critical-css` cookie is set, the client already has the CSS file download,
- # so don't include the critical CSS, and load the full stylesheet(s) synchronously
- #}
+# If the `critical-css` cookie is set, the client already has the CSS file download,
+# so don't include the critical CSS, and load the full stylesheet(s) synchronously
+#}
 <!--# if expr="$HTTP_COOKIE=/critical\-css\={{ cssHash }}/" -->
 {{ craft.vite.script("src/js/app.js", false) }}
 <!--# else -->

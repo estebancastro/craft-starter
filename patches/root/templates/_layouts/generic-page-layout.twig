@@ -19,34 +19,36 @@
 #}
 {% extends "_boilerplate/_layouts/base-html-layout.twig" %}
 
-{# -- Any <meta> tags that should be included in the <head> #}
+{# -- Any <meta> tags that should be included in the <head> -- #}
 {% block headMeta %}
 {% endblock headMeta %}
 
-{# -- Any <link> tags that should be included in the <head> #}
+{# -- Any <link> tags that should be included in the <head> -- #}
 {% block headLinks %}
 {% endblock headLinks %}
 
 {# -- Any CSS that should be included before </head> -- #}
 {% block headCss %}
-    {% include "_inline-css/site-fonts.css" %}
+    {# {% include "_inline-css/site-fonts.css" %} #}
 {% endblock headCss %}
 
 {# -- Page body -- #}
 {% block bodyHtml %}
     <div id="page-container" class="overflow-hidden leading-normal">
+
         <div id="content-container">
 
             {# -- Info header -- #}
             {% include "_partials/info-header.twig" %}
 
             <main>
-                <div class="container mx-auto">
+                <div>
                     {# -- Primary content block -- #}
                     {% block content %}
                     {% endblock %}
                 </div>
             </main>
+
         </div>
 
         {# -- Content that appears below the primary content block -- #}
@@ -56,7 +58,7 @@
         {# -- Info footer -- #}
         {% include "_partials/info-footer.twig" %}
 
-        {# -- HTML Footer -- #}
+        {# -- HTML footer -- #}
         {% include "_partials/global-footer.twig" %}
     </div>
 {% endblock bodyHtml %}

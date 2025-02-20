@@ -38,24 +38,24 @@
 
 {# -- Page content that should be included in the <head> -- #}
 {% block headContent %}
-    {# -- Any <meta> tags that should be included in the <head> #}
+    {# -- Any <meta> tags that should be included in the <head> -- #}
     {% block headMeta %}
     {% endblock headMeta %}
 
-    {# -- Any <link> tags that should be included in the <head> #}
+    {# -- Any <link> tags that should be included in the <head> -- #}
     {% block headLinks %}
     {% endblock headLinks %}
 
-    {# -- Inline JS #}
+    {# -- Inline JS -- #}
     {% include "_boilerplate/_partials/head-js.twig" %}
 
     {# -- Any JavaScript that should be included before </head> -- #}
     {% block headJs %}
     {% endblock headJs %}
 
-    {# -- Inline and critical CSS #}
+    {# -- Inline and critical CSS -- #}
     <style>
-        [v-cloak] {display: none !important;}
+        [x-cloak] { display: none !important; }
         {# -- Any CSS that should be included before </head> -- #}
         {% block headCss %}
         {% endblock headCss %}
@@ -70,9 +70,9 @@
     {% block bodyHtml %}
     {% endblock bodyHtml %}
 
-    {#-- Site-wide JavaScript --#}
+    {# -- Site-wide JavaScript -- #}
 
-    {# -- Inline JS #}
+    {# -- Inline JS -- #}
     {% include "_boilerplate/_partials/body-js.twig" %}
 
     {# -- Any JavaScript that should be included before </body> -- #}

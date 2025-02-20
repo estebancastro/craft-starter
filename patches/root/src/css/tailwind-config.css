@@ -8,5 +8,5 @@
 @source "../../templates/**/*.{html,twig,vue,jsx,tsx}";
 
 @theme {
-    --color-mint-500: oklch(0.72 0.11 178);
+    --font-sans: InterVariable, sans-serif;
 }
