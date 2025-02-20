@@ -65,6 +65,8 @@ _ide_helper.php
 # Node.js dependencies
 /node_modules
 
-# CraftCMS specific
+# CraftCMS
 /.env
 /web/dist
+config/license.key
+config/license.key.*
