@@ -109,11 +109,10 @@ ddev exec craft setup/security-key
 echo "Installing Craft plugins... ⚡️"
 
 # Install the 'craft-vite' plugin and then install it using Craft
-ddev composer require "nystudio107/craft-vite:^5.0.1" -W && ddev exec php craft plugin/install vite
+ddev composer require "nystudio107/craft-vite:^5.0.1" -w && ddev craft plugin/install vite
 
 # Install the 'craft-minify' plugin and then install it using Craft
-ddev composer require "nystudio107/craft-minify:^5.0.0" -W && ddev exec php craft plugin/install minify
-
+ddev composer require "nystudio107/craft-minify:^5.0.0" -w && ddev craft plugin/install minify
 
 
 # ========================
