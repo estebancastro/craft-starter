@@ -126,6 +126,16 @@ ddev exec npm install --save-dev vite @vitejs/plugin-legacy tailwindcss @tailwin
 
 
 
+# ========================
+# Restart DDEV environment
+# ========================
+echo "Restarting DDEV... ⚡️"
+
+# Restart the DDEV environment to apply changes
+ddev restart
+
+
+
 # ============================================
 # Set the ASSETS_URL based on PRIMARY_SITE_URL
 # ============================================
@@ -143,16 +153,6 @@ echo "Cleaning project... ⚡️"
 
 # Remove the 'craft-starter' directory and environment files
 rm -rf "craft-starter" ".env.example.staging" ".env.example.production"
-
-
-
-# ========================
-# Restart DDEV environment
-# ========================
-echo "Restarting DDEV... ⚡️"
-
-# Restart the DDEV environment to apply changes
-ddev restart
 
 
 
