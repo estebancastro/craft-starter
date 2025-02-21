@@ -3,11 +3,15 @@
     "git": {
         "tagName": "${version}",
         "commitMessage": "Finish ${version}",
-        "requireCommits": true
+        "requireCommits": true,
+        "tagArgs": [
+            "--sign"
+        ]
     },
     "github": {
         "release": true,
-        "releaseName": "${version}"
+        "releaseName": "${version}",
+        "token": "$GITHUB_TOKEN"
     },
     "npm": {
         "publish": false,
