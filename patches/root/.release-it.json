@@ -1,11 +1,14 @@
 {
     "$schema": "https://unpkg.com/release-it@18/schema/release-it.json",
     "git": {
-        "tagName": "${version}",
-        "commitMessage": "Finish ${version}",
         "requireCommits": true,
+        "commitMessage": "Finish ${version}",
+        "commitArgs": [
+            "-S"
+        ],
+        "tagName": "${version}",
         "tagArgs": [
-            "--sign"
+            "-s"
         ]
     },
     "github": {
