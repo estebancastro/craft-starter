@@ -1,7 +1,6 @@
 {
     "$schema": "https://unpkg.com/release-it@18/schema/release-it.json",
     "git": {
-        "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs",
         "requireCommits": true,
         "commitMessage": "Finish ${version}",
         "commitArgs": [
@@ -20,8 +19,5 @@
     "npm": {
         "publish": false,
         "skipChecks": true
-    },
-    "hooks": {
-        "after:bump": "npx auto-changelog --hide-credit --package"
     }
 }
