@@ -1,4 +1,4 @@
-.PHONY: build dev launch release up
+.PHONY: build dev launch release up craft-update
 
 # Default build command
 build: up
@@ -15,6 +15,24 @@ launch: up
 # Release
 release:
 	npm run release
+
+# Craft backup, updates, and clear cache
+craft-update:
+	@echo "Creating DDEV snapshot (backup)..."
+	ddev snapshot
+	@echo "Creating Craft database backup..."
+	ddev craft db/backup
+	@echo "Checking for available updates for Craft and plugins..."
+	@if ! ddev craft update/info | grep -q "You’re all up to date!"; then \
+		echo "Updates found. Proceeding with Craft and plugin updates..."; \
+		ddev craft update all; \
+		echo "Clearing Craft caches..."; \
+		ddev craft clear-caches/all; \
+		echo "Craft and plugins update complete!"; \
+	else \
+		echo "No updates available!"; \
+		exit 0; \
+	fi
 
 # Ensure ddev is started before running any other commands
 up:

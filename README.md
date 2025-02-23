@@ -41,17 +41,6 @@ Fish
 bash (curl -fsL https://raw.githubusercontent.com/estebancastro/craft-starter/main/install.sh | psub)
 ```
 
-## Makefile Commands
-
-A Makefile has been included to provide a unified CLI for common development commands.
-
-| Command | Description |
-| -------- | ------- |
-| `make dev` | Runs a one-time build of all front-end assets, then starts Vite's server for HMR. |
-| `make build` | Builds all front-end assets. |
-| `make launch` | Launch a browser with the current site. |
-| `make release` | Runs release-it to automatically. |
-
 ## Roadmap
 
 - Improve documentation.
