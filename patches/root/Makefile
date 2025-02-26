@@ -22,13 +22,13 @@ craft-update:
 	@if ! ddev craft update/info | grep -q "You’re all up to date!"; then \
 		echo "Updates found! Proceeding..."; \
 		echo "Creating DDEV snapshot (backup)..."; \
-		@ddev snapshot; \
+		ddev snapshot; \
 		echo "Creating Craft database backup..."; \
-		@ddev craft db/backup; \
+		ddev craft db/backup; \
 		echo "Updating Craft CMS and all plugins..."; \
-		@ddev craft update all; \
+		ddev craft update all --backup=0; \
 		echo "Clearing Craft caches..."; \
-		@ddev craft clear-caches/all; \
+		ddev craft clear-caches/all; \
 		echo "Craft and plugins update complete!"; \
 	else \
 		echo "No updates available!"; \

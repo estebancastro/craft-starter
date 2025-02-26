@@ -19,7 +19,6 @@ return GeneralConfig::create()
         '@webroot' => dirname(__DIR__) . '/web',
     ])
     ->allowAdminChanges(App::env('CRAFT_ALLOW_ADMIN_CHANGES') ?? false)
-    ->backupOnUpdate(App::env('CRAFT_BACKUP_ON_UPDATE') ?? false)
     ->cpTrigger(App::env('CRAFT_CP_TRIGGER') ?: 'admin')
     ->devMode(App::env('CRAFT_DEV_MODE') ?? false)
     ->disallowRobots(App::env('CRAFT_DISALLOW_ROBOTS') ?? false)
