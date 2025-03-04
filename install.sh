@@ -138,7 +138,7 @@ ddev restart
 # ============================================
 # Set the ASSETS_URL based on PRIMARY_SITE_URL
 # ============================================
-echo "Set ASSETS_URL path... ⚡️"
+echo "Setting assets URL... ⚡️"
 
 # Replace the value of ASSETS_URL in the .env file with the value of PRIMARY_SITE_URL
 sed -i '' 's|^ASSETS_URL=.*|ASSETS_URL="'"$(awk -F'=' '/^PRIMARY_SITE_URL/ {print $2}' .env | tr -d '"')"'"|' .env
@@ -155,7 +155,8 @@ rm -rf "craft-starter" ".env.example.staging" ".env.example.production"
 
 
 
-# ===============================================
-# Build, Launch Site and Start Development Server
-# ===============================================
-sleep 2 && ddev npm run build && ddev launch && ddev npm run dev
+# ================
+# Project is ready
+# ================
+echo "Ready for takeoff! 🚀"
+echo "Run 'make dev' to start the Vite development server."
