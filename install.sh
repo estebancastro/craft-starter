@@ -3,20 +3,31 @@ set -e  # Exit on any error
 
 
 
-# =========================================
-# Check if DDEV is installed before running
-# =========================================
+# ======================================
+# Check if Docker and DDEV are installed
+# ======================================
 
 # Function to check if a command exists
 command_exists() {
-  command -v "$1" >/dev/null 2>&1
+    command -v "$1" >/dev/null 2>&1
 }
+
+# Check if Docker is installed
+if ! command_exists "docker"; then
+    echo "Error: Docker is not installed. Please install Docker before running the script."
+    exit 1
+fi
+
+# Check if Docker is running
+if ! docker info >/dev/null 2>&1; then
+    echo "Error: Docker is not running. Please start Docker before running the script."
+    exit 1
+fi
 
 # Check if DDEV is installed
 if ! command_exists "ddev"; then
-  # If DDEV is not found, print an error and exit the script
-  echo "Error: ddev is not installed. Please install DDEV before running the script."
-  exit 1
+    echo "Error: DDEV is not installed. Please install DDEV before running the script."
+    exit 1
 fi
 
 
@@ -25,18 +36,18 @@ fi
 # Create and enter the project directory
 # ======================================
 while true; do
-  read -rp "Enter a project name: " folder_name
+    read -rp "Enter a project name: " folder_name
 
-  if [[ -d "$folder_name" ]]; then
-    if [[ -n "$(find "$folder_name" -mindepth 1 -print -quit 2>/dev/null)" ]]; then
-      echo "Error: The folder already exists and is not empty."
+    if [[ -d "$folder_name" ]]; then
+        if [[ -n "$(find "$folder_name" -mindepth 1 -print -quit 2>/dev/null)" ]]; then
+            echo "Error: The folder already exists and is not empty."
+        else
+            break
+        fi
     else
-      break
+        mkdir -p "$folder_name"
+        break
     fi
-  else
-    mkdir -p "$folder_name"
-    break
-  fi
 done
 
 cd "$folder_name" || exit
@@ -113,6 +124,7 @@ ddev composer require "nystudio107/craft-vite:^5.0.1" -W && ddev craft plugin/in
 
 # Install the 'craft-minify' plugin and then install it using Craft
 ddev composer require "nystudio107/craft-minify:^5.0.0" -W && ddev craft plugin/install minify
+
 
 
 # ========================
