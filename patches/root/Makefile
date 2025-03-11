@@ -1,27 +1,31 @@
-.PHONY: build dev launch release up
+.PHONY: build dev launch release craft up
 
-# Default build command
+# Start DDEV (if not already running) and execute 'npm run build' for the build task
 build: up
 	@ddev npm run build
 
-# Start the project (if not already started) and run dev
+# Start DDEV (if not already running) and execute 'npm run dev' for development
 dev: up
 	@ddev npm run dev
 
-# Start the project (if not already started) and launch the site
+# Start DDEV (if not already running) and launch the local site in the browser
 launch: up
 	@ddev launch
 
-# Release
+# Run any Craft CMS command inside the DDEV PHP container
+craft:
+	@ddev craft $(filter-out $@,$(MAKECMDGOALS))
+
+# Execute the release task (no DDEV needed as it's a local task)
 release:
 	@npm run release
 
-# Ensure ddev is started before running any other commands
+# Ensure DDEV is running before executing any other tasks
 up:
 	@if ! ddev describe | grep -q "OK"; then \
-		@ddev start; \
+		ddev start; \
 	fi
 
-# Catch-all for any undefined targets (no-op)
+# Catch-all rule to prevent Make from treating extra arguments as targets
 %:
 	@:
