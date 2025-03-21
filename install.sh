@@ -133,7 +133,12 @@ ddev composer require "nystudio107/craft-minify:^5.0.0" -W && ddev craft plugin/
 echo "Installing npm dependencies... ⚡️"
 
 # Install required npm packages for the project
-ddev exec npm install --save-dev vite @vitejs/plugin-legacy tailwindcss @tailwindcss/vite rimraf rollup-plugin-critical vite-plugin-compression vite-plugin-live-reload vite-plugin-favicon2 regenerator-runtime terser @types/node release-it
+ddev exec npm install --save-dev vite @vitejs/plugin-legacy tailwindcss @tailwindcss/vite \
+    rimraf rollup-plugin-critical vite-plugin-compression vite-plugin-live-reload \
+    vite-plugin-favicon2 regenerator-runtime terser @types/node release-it
+
+# Install Prettier with exact version
+ddev exec npm install --save-dev --save-exact prettier
 
 
 
